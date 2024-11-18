@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { PureComponent } from "react";
 import {
   RadialBarChart,
@@ -36,7 +37,7 @@ const CountChart = () => {
     <div className="bg-white rounded-lg p-4 h-full">
       <div className="flex justify-between items-center ">
         <h1 className="text-lg ">دانش آموزان</h1>
-        <Imaage src="/moreDark.png" alt="" />
+        <Image src="/moreDark.png" alt="" fill />
       </div>
       <div className="w-full h-[75%] relative">
         <ResponsiveContainer>

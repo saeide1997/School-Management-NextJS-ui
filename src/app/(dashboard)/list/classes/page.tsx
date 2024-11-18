@@ -1,4 +1,3 @@
-import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -52,7 +51,7 @@ const columns = [
     : []),
 ];
 
-const renderRow = (item: ClassList) => (
+const renderRow = () => (
   <tr
     key={item.id}
     className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-violet-100"

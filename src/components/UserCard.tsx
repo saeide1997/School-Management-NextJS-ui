@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 const UserCard =({type}:{type: string}) => {
     return(
         <div className = ' rounded-2xl odd:bg-violet-200 even:bg-yellow-200 p-4 flex-1'>

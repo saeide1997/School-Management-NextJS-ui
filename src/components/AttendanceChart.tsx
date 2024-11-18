@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { PureComponent } from "react";
 import {
   BarChart,
@@ -62,8 +63,8 @@ const AttendanceChart = () => {
           <YAxis axisLine={false}  tick={{fill:'#d1d5db'}} tickLine={false}/>
           <Tooltip />
           <Legend align='right' verticalAlign="top" wrapperStyle={{paddingBlock:'20px'}}/>
-          <Bar dataKey="حاضر" fill="#8884d8" legendType='circle' radius={[10,10,0,]} />
-          <Bar dataKey="غایب" fill="#82ca9d" legendType='circle' radius={[10,10,0,]} />
+          <Bar dataKey="حاضر" fill="#8884d8" legendType='circle'  />
+          <Bar dataKey="غایب" fill="#82ca9d" legendType='circle'  />
         </BarChart>
       </ResponsiveContainer>
     </div>
