@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",        
-    "build": "next build",          
+    "dev": "node server.js",
+    "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
@@ -14,6 +14,7 @@
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-big-calendar": "^1.15.0",
+    "react-calendar": "^5.1.0",
     "react-dom": "^18",
     "recharts": "^2.13.3"
   },

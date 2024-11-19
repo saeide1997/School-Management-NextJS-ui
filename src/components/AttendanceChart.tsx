@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React, { PureComponent } from "react";
+'use client'
+import Image from "next/image"
 import {
   BarChart,
   Bar,
@@ -64,7 +64,7 @@ const AttendanceChart = () => {
           <Tooltip />
           <Legend align='right' verticalAlign="top" wrapperStyle={{paddingBlock:'20px'}}/>
           <Bar dataKey="حاضر" fill="#8884d8" legendType='circle'  />
-          <Bar dataKey="غایب" fill="#82ca9d" legendType='circle'  />
+          <Bar dataKey="غایب" fill="#fef08a" legendType='circle'  />
         </BarChart>
       </ResponsiveContainer>
     </div>
