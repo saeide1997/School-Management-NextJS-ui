@@ -20,7 +20,12 @@ const ClassListPage = () => {
 // const { sessionClaims } = auth();
 // const role = (sessionClaims?.metadata as { role?: string })?.role;
 
-
+type ClassList = {
+  id: number;
+  name: string;
+  capacity: string;
+  supervisor: string;
+};
 const columns = [
   {
     header: "نام کلاس",
@@ -51,7 +56,7 @@ const columns = [
     : []),
 ];
 
-const renderRow = () => (
+const renderRow = ((item: ClassList)) => (
   <tr
     key={item.id}
     className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-violet-100"
@@ -70,9 +75,7 @@ const renderRow = () => (
             </button>
           </Link>
           {role == "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-violet-100">
-              <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            <FormModal  table="classes" type="delete" id={item.id}/>
           )}
       </div>
     </td>

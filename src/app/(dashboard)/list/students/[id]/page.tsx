@@ -4,7 +4,7 @@ import Performance from "@/components/Performance";
 import Image from "next/image";
 import Link from "next/link";
 
-const singleTeacherPage = () => {
+const singleStudentPage = () => {
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       <div className="w-full xl:w-2/3 ">
@@ -58,8 +58,8 @@ const singleTeacherPage = () => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold ">۳</h1>
-                <span className="text-sm text-gray-400">رشته</span>
+                <h1 className="text-xl font-semibold ">۴ام</h1>
+                <span className="text-sm text-gray-400">کلاس</span>
               </div>
             </div>
             <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
@@ -71,7 +71,7 @@ const singleTeacherPage = () => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold ">۵</h1>
+                <h1 className="text-xl font-semibold ">20</h1>
                 <span className="text-sm text-gray-400">درس</span>
               </div>
             </div>
@@ -84,28 +84,15 @@ const singleTeacherPage = () => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold ">۷</h1>
+                <h1 className="text-xl font-semibold ">۷الف</h1>
                 <span className="text-sm text-gray-400">کلاس</span>
-              </div>
-            </div>
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
-              <Image
-                src="/singleAttendance.png"
-                alt=""
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-              <div className="">
-                <h1 className="text-xl font-semibold ">90%</h1>
-                <span className="text-sm text-gray-400">حاضر</span>
               </div>
             </div>
           </div>
         </div>
         {/* bottom */}
         <div className="mt-4 bg-white rounded-full p-4 h-[800px]">
-          <h1>برنامه معلمان</h1>
+          <h1>برنامه دانش آموز</h1>
           <BigCalendar />
         </div>
       </div>
@@ -115,16 +102,16 @@ const singleTeacherPage = () => {
           <h1 className="text-xl font-semibold">میانبر ها</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-yellow-200" href="/">
-              کلاس معلمان
+              کلاس دانش آموز
             </Link>
             <Link className="p-3 rounded-md bg-violet-200" href="/">
-              دروس معلمان
+              دروس دانش آموز
             </Link>
             <Link className="p-3 rounded-md bg-blue-200" href="/">
-              دانش‌آموزان معلمان
+              معلم دانش آموز
             </Link>
             <Link className="p-3 rounded-md bg-pink-200" href="/">
-              امتحانات معلمان
+              امتحانات دانش آموز
             </Link>
           </div>
         </div>
@@ -136,4 +123,4 @@ const singleTeacherPage = () => {
   );
 };
 
-export default singleTeacherPage;
+export default singleStudentPage;

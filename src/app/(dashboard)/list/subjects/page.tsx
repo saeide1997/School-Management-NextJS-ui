@@ -9,6 +9,7 @@ import Image from "next/image";
 // import { auth } from "@clerk/nextjs/server";
 import { role, subjectsData } from "@/lib/data";
 import Link from "next/link";
+import FormModal from "@/components/FormModal";
 
 // type SubjectList = Subject & { teachers: Teacher[] };
 
@@ -19,7 +20,11 @@ const SubjectListPage = ()=> {
 // }) => {
 //   const { sessionClaims } = auth();
 //   const role = (sessionClaims?.metadata as { role?: string })?.role;
-
+type SubjectList = {
+  id: number;
+  name: string;
+  teachers: string[];
+};
   const columns = [
     {
       header: "نام درس",
@@ -48,14 +53,10 @@ const SubjectListPage = ()=> {
       <td>
         <div className="flex items-center gap-2">
         <Link href={"/list/teachers"}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100">
-              <Image src="/view.png" alt="" width={16} height={16} />
-            </button>
+        <FormModal  table="subjects" type="edit" data={item}/>
           </Link>
           {role == "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-violet-100">
-              <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            <FormModal  table="subjects" type="delete" id={item.id}/>
           )}
         </div>
       </td>
@@ -110,9 +111,9 @@ const SubjectListPage = ()=> {
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow-100">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {/* {role === "admin" && (
-              <FormContainer table="subject" type="create" />
-            )} */}
+            {role === "admin" && (
+              <FormModal table="subject" type="create" />
+            )}
           </div>
         </div>
       </div>

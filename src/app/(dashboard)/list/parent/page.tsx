@@ -10,6 +10,7 @@ import Image from "next/image";
 import { auth } from "@clerk/nextjs/server";
 import { parentsData, role } from "@/lib/data";
 import Link from "next/link";
+import FormModal from "@/components/FormModal";
 
 // type ParentList = Parent & { students: Student[] };
 
@@ -21,7 +22,16 @@ const ParentListPage = ()=>{
 
 // const { sessionClaims } = auth();
 // const role = (sessionClaims?.metadata as { role?: string })?.role;
-
+type ParentList = {
+  id: number;
+  // teacherId: string;
+  name: string;
+  email?: string;
+  photo: string;
+  phone: string;
+  address: string;
+  students: string[];
+};
 
 const columns = [
   {
@@ -72,53 +82,15 @@ const renderRow = (item: ParentList) => (
     <td>
       <div className="flex items-center gap-2">
       <Link href={"/list/teachers"}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100">
-              <Image src="/view.png" alt="" width={16} height={16} />
-            </button>
+      <FormModal  table="parent" type="delete" data={item}/>
           </Link>
           {role == "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-violet-100">
-              <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            <FormModal  table="parent" type="delete" id={item.id}/>
           )}
       </div>
     </td>
   </tr>
 );
-
-  // const { page, ...queryParams } = searchParams;
-
-  // const p = page ? parseInt(page) : 1;
-
-  // URL PARAMS CONDITION
-
-  // const query: Prisma.ParentWhereInput = {};
-
-  // if (queryParams) {
-  //   for (const [key, value] of Object.entries(queryParams)) {
-  //     if (value !== undefined) {
-  //       switch (key) {
-  //         case "search":
-  //           query.name = { contains: value, mode: "insensitive" };
-  //           break;
-  //         default:
-  //           break;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // const [data, count] = await prisma.$transaction([
-  //   prisma.parent.findMany({
-  //     where: query,
-  //     include: {
-  //       students: true,
-  //     },
-  //     take: ITEM_PER_PAGE,
-  //     skip: ITEM_PER_PAGE * (p - 1),
-  //   }),
-  //   prisma.parent.count({ where: query }),
-  // ]);
 
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
@@ -134,7 +106,7 @@ const renderRow = (item: ParentList) => (
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow-100">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {/* {role === "admin" && <FormContainer table="parent" type="create" />} */}
+            {role === "admin" && <FormModal  table="parent" type="create"/>}
           </div>
         </div>
       </div>
