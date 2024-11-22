@@ -1,4 +1,6 @@
+import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
+import EvantCalander from "@/components/EventCalander";
 
 const ParentPage = () => {
   return (
@@ -10,7 +12,8 @@ const ParentPage = () => {
         </div>
       </div>
       <div className="w-full xl:w-1/3 flex flex-col gap-8 ">
-        {/* <Announcements/> */}
+      <EvantCalander/>
+        <Announcements/>
       </div>
     </div>
   );

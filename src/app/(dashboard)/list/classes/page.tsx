@@ -8,6 +8,7 @@ import Image from "next/image";
 // import { auth } from "@clerk/nextjs/server";
 import { classesData, role } from "@/lib/data";
 import Link from "next/link";
+import FormModal from "@/components/FormModal";
 
 // type ClassList = Class & { supervisor: Teacher };
 
@@ -56,7 +57,7 @@ const columns = [
     : []),
 ];
 
-const renderRow = ((item: ClassList)) => (
+const renderRow = (item: ClassList) => (
   <tr
     key={item.id}
     className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-violet-100"

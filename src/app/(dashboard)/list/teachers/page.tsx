@@ -56,7 +56,7 @@ const TeachersList = () => {
       <td>
         <div className="flex items-center gap-2">
           <Link href={"/list/teachers"}>
-          <FormModal  table="teachers" type="edit" data={item}/>
+          <FormModal  table="teachers" type="update" data={item}/>
           </Link>
           {role == "admin" && (
             <FormModal  table="teachers" type="delete" id={item.id}/>

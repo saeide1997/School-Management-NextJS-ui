@@ -53,7 +53,7 @@ type SubjectList = {
       <td>
         <div className="flex items-center gap-2">
         <Link href={"/list/teachers"}>
-        <FormModal  table="subjects" type="edit" data={item}/>
+        <FormModal  table="subjects" type="update" data={item}/>
           </Link>
           {role == "admin" && (
             <FormModal  table="subjects" type="delete" id={item.id}/>
@@ -112,7 +112,7 @@ type SubjectList = {
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (
-              <FormModal table="subject" type="create" />
+              <FormModal table="subjects" type="create" />
             )}
           </div>
         </div>

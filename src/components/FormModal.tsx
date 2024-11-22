@@ -7,7 +7,7 @@ const FormModal = ({
     type,
     data,
     id, }:{
-        table:'teacher'| 'students' | 'parent'| 'classes' | 'subjects'; type: 'create' | 'update' | 'delete'; data?:any; id?: number }) => {
+        table:'teachers'| 'students' | 'parent'| 'classes' | 'subjects'; type: 'create' | 'update' | 'delete'; data?:any; id?: number }) => {
     const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
     const bgColor =
       type === "create"
