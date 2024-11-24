@@ -2,11 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'shabnam';
+  src: url('../fonts/Shabnam.eot'); 
+  src: url('../fonts/Shabnam.eot') format('embedded-opentype'),
+  url('../fonts/Shabnam.woff') format('woff'),
+  url('../fonts/Shabnam.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'shabnamLight';
+  src: url('../fonts/Shabnam-Light.eot'); 
+  src: url('../fonts/Shabnam-Light.eot') format('embedded-opentype'),
+  url('../fonts/Shabnam-Light.woff') format('woff'),
+  url('../fonts/Shabnam-Light.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'shabnamBold';
+  src: url('../fonts/Shabnam-Bold.eot'); 
+  src: url('../fonts/Shabnam-Bold.eot') format('embedded-opentype'),
+  url('../fonts/Shabnam-Bold.woff') format('woff'),
+  url('../fonts/Shabnam-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'shabnamMedium';
+  src: url('../fonts/Shabnam-Medium.eot'); 
+  src: url('../fonts/Shabnam-Medium.eot') format('embedded-opentype'),
+  url('../fonts/Shabnam-Medium.woff') format('woff'),
+  url('../fonts/Shabnam-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'shabnamLight';
+  src: url('../fonts/Shabnam-Light.eot'); 
+  src: url('../fonts/Shabnam-Light.eot') format('embedded-opentype'),
+  url('../fonts/Shabnam-Light.woff') format('woff'),
+  url('../fonts/Shabnam-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'shabnamThin';
+  src: url('../fonts/Shabnam-Thin.eot'); 
+  src: url('../fonts/Shabnam-Thin.eot') format('embedded-opentype'),
+  url('../fonts/Shabnam-Thin.woff') format('woff'),
+  url('../fonts/Shabnam-Thin.ttf') format('truetype');
+}
+
+.shabnam{
+  font-family: 'shabnam' !important;
+}
+
+.shabnamLight{
+  font-family: 'shabnamLight' !important;
+}
+
+.shabnamMedium{
+  font-family: 'shabnamMedium' !important;
+}
+
+.shabnamBold{
+  font-family: 'shabnamBold' !important;
+}
+
+.shabnamThin{
+  font-family: 'shabnamThin' !important;
+}
+
 .react-calendar {
   width: 100% !important;
   border: none !important;
   font-family: "Inter", sans-serif !important;
 }
+
+body{
+    direction: rtl;
+    font-family: 'shabnam' !important;
+}
+
+ .iransans{
+  font-family: 'Yekan' !important;
+ }
 
 .react-calendar__navigation__label__labelText {
   font-weight: 600;
@@ -105,8 +183,4 @@
 .rbc-event-label{
   color: gray !important;
   margin-bottom: 5px;
-}
-
-body{
-    direction: rtl;
 }

@@ -1,4 +1,4 @@
-// import FormContainer from "@/components/FormContainer";
+'use client'
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -11,10 +11,20 @@ import Image from "next/image";
 import { parentsData, role } from "@/lib/data";
 import Link from "next/link";
 import FormModal from "@/components/FormModal";
+import {useState, useEffect} from 'react'
+import {RiseLoader} from "react-spinners";
 
 // type ParentList = Parent & { students: Student[] };
 
 const ParentListPage = ()=>{
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    }, 2000)
+  }, []);
 //   searchParams,
 // }: {
 //   searchParams: { [key: string]: string | undefined };
@@ -94,6 +104,17 @@ const renderRow = (item: ParentList) => (
 
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
+      {loading?<div className=' w-full h-svh justify-center items-center flex'>
+            <RiseLoader
+
+            color={'#6ac0ff'}
+            loading={loading}
+            size={20}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          /></div>:
+         
+      <>
       {/* TOP */}
       <div className="flex items-center justify-between">
         <h1 className="hidden md:block text-lg font-semibold">تمام والدین</h1>
@@ -114,6 +135,7 @@ const renderRow = (item: ParentList) => (
       <Table columns={columns} renderRow={renderRow} data={parentsData} />
       {/* PAGINATION */}
       <Pagination />
+      </>}
     </div>
   );
 };

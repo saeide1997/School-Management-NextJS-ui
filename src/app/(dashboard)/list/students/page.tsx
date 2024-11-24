@@ -1,3 +1,4 @@
+'use client'
 import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
@@ -5,6 +6,8 @@ import TableSearch from "@/components/TableSearch";
 import { role, studentsData, teachersData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import {useState, useEffect} from 'react'
+import {  RiseLoader } from "react-spinners";
 
 type Student = {
   id: number;
@@ -32,6 +35,15 @@ const columns = [
 ];
 
 const StudentsList = () => {
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    }, 2000)
+  }, []);
+
   const renderRow = (item: Student) => (
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 test-sm hover:bg-violet-100">
       <td className="flex items-center gap-4 p-4 ">
@@ -66,7 +78,17 @@ const StudentsList = () => {
 
   return (
     <div className="bg-white rounded-md p-4 flex-1 m-4 mt-0">
-      <div className="flex justify-between items-center">
+      {loading?<div className=' w-full h-svh justify-center items-center flex'>
+            <RiseLoader
+
+            color={'#a600ff'}
+            loading={loading}
+            size={20}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          /></div>:
+         
+      <><div className="flex justify-between items-center">
         <h1 className="hidden md:block font-semibold">همه دانش‌آموزان</h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto ">
           <TableSearch />
@@ -84,7 +106,7 @@ const StudentsList = () => {
         </div>
       </div>
       <Table columns={columns} renderRow={renderRow} data={studentsData}/>
-      <Pagination />
+      <Pagination /></> }
     </div>
   );
 };

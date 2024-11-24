@@ -23,6 +23,7 @@ const EvantCalander = () => {
         value={value}
         calendarType="hebrew"
         locale="fa-FA"
+        className='shabnamBold'
       />
       <div className='flex items-center justify-between'>
         <h1 className='text-xl font-semibold my-4'>رویدادها</h1>
